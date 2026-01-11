@@ -1,0 +1,8 @@
+{
+  "hosting": {
+    "site": "ponto-rnf",
+
+    "public": "public",
+    ...
+  }
+}
