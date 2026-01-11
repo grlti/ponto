@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Ponto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+
+        <header class="glass-card header-card">
+            <h1>Controle de Ponto</h1>
+            <div id="clock" class="digital-clock">00:00:00</div>
+            <div id="date" class="date-display">Carregando...</div>
+        </header>
+
+        <section class="action-section">
+            <button id="btn-register" class="btn-primary">
+                <span class="btn-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Registrar Ponto
+                </span>
+            </button>
+            <button id="btn-pdf" class="btn-secondary" title="Baixar PDF">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 16L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M9 13L12 16L15 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M20 17V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V17" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </section>
+
+        <!-- Stats Dashboard -->
+        <section class="glass-card stats-card">
+            <div class="stat-item">
+                <span class="stat-label">Trabalhado</span>
+                <span id="stat-worked" class="stat-value">00:00</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Extra Hoje</span>
+                <span id="stat-overtime" class="stat-value">00:00</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Banco Mês</span>
+                <span id="stat-month" class="stat-value">00:00</span>
+            </div>
+        </section>
+
+        <section class="glass-card history-card">
+            <div class="history-header">
+                <h2>Histórico de Hoje</h2>
+                <button id="btn-clear" class="btn-text">Limpar</button>
+            </div>
+
+            <div class="history-list-container">
+                <ul id="history-list" class="history-list">
+                    <!-- Items will be injected here -->
+                    <li class="empty-state">Nenhum registro hoje.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
