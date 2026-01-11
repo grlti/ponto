@@ -1,8 +1,18 @@
 {
   "hosting": {
     "site": "ponto-rnf",
-
     "public": "public",
-    ...
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }
+
